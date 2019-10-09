@@ -1,5 +1,6 @@
 package com.example.android.courtcounter;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 /**
@@ -7,27 +8,45 @@ import androidx.lifecycle.ViewModel;
  */
 public class ScoreViewModel extends ViewModel {
 
-    // Tracks the score for Team A
-    private int scoreTeamA = 0;
-
-    // Tracks the score for Team B
-    private int scoreTeamB = 0;
+    // TODO 07. Replace the int members with MutableLiveData objects
+    private MutableLiveData<Integer> scoreTeamA = new MutableLiveData<>(new Integer(0));
+    private MutableLiveData<Integer> scoreTeamB = new MutableLiveData<>(new Integer(0));
 
     // TODO 03. We create the getter and setter methods
 
-    public int getScoreTeamA() {
+    // TODO 08. We create the getter and setter methods of the MutableLiveData version
+
+    public MutableLiveData<Integer> getScoreTeamA() {
         return scoreTeamA;
     }
 
     public void setScoreTeamA(int scoreTeamA) {
-        this.scoreTeamA = scoreTeamA;
+        this.scoreTeamA.setValue(scoreTeamA);
     }
 
-    public int getScoreTeamB() {
+    public MutableLiveData<Integer> getScoreTeamB() {
         return scoreTeamB;
     }
 
     public void setScoreTeamB(int scoreTeamB) {
-        this.scoreTeamB = scoreTeamB;
+        this.scoreTeamB.setValue(scoreTeamB);
+    }
+
+    public void increaseScoreTeamA(int value) {
+        int currentScore = this.scoreTeamA.getValue();
+        this.scoreTeamA.setValue(currentScore + value);
+    }
+
+    public void increaseScoreTeamB(int value) {
+        int currentScore = this.scoreTeamB.getValue();
+        this.scoreTeamB.setValue(currentScore + value);
+    }
+
+    public void resetScoreTeamA() {
+        this.scoreTeamA.setValue(0);
+    }
+
+    public void resetScoreTeamB() {
+        this.scoreTeamB.setValue(0);
     }
 }
