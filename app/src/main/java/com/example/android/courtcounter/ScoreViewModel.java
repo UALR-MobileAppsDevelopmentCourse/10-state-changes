@@ -1,5 +1,6 @@
 package com.example.android.courtcounter;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -16,7 +17,7 @@ public class ScoreViewModel extends ViewModel {
 
     // TODO 08. We create the getter and setter methods of the MutableLiveData version
 
-    public MutableLiveData<Integer> getScoreTeamA() {
+    public LiveData<Integer> getScoreTeamA() {
         return scoreTeamA;
     }
 
@@ -24,7 +25,7 @@ public class ScoreViewModel extends ViewModel {
         this.scoreTeamA.setValue(scoreTeamA);
     }
 
-    public MutableLiveData<Integer> getScoreTeamB() {
+    public LiveData<Integer> getScoreTeamB() {
         return scoreTeamB;
     }
 
