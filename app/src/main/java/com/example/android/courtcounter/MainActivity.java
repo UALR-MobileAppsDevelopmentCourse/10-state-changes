@@ -18,6 +18,7 @@ package com.example.android.courtcounter;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.SavedStateViewModelFactory;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
@@ -29,13 +30,7 @@ import android.widget.TextView;
  * This activity keeps track of the basketball score for 2 teams.
  */
 
-// TODO 01. Create a ViewModel class to hold all the data associated with the screen
-
 public class MainActivity extends AppCompatActivity {
-
-    // TODO 02. We move the data-related attributes to the ViewModel class
-
-    // TODO 04. Create a member variable for the ViewModel in the UI Controller
 
     private ScoreViewModel mViewModel;
 
@@ -43,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // TODO 05. Initialize ViewModel using ViewModelProvider.
-        // ViewModelProvider provides ViewModels for a scope
-        mViewModel = new ViewModelProvider(this).get(ScoreViewModel.class);
-        // TODO 09. Start observing LiveData object.
-        // TODO 09.01. Create the observer which updates the UI
+        // TODO 01. We need to setup a ViewModel to receive a SavedStateHandle you need to
+        //  create them using a SavedStateViewModelFactory
+        //
+        SavedStateViewModelFactory vmFactory = new SavedStateViewModelFactory(this.getApplication(), this);
+        mViewModel = new ViewModelProvider(this, vmFactory).get(ScoreViewModel.class);
+
         final Observer<Integer> scoreAObserver = new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
@@ -60,17 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 displayForTeamB(integer);
             }
         };
-        // TODO 09.02. Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
         mViewModel.getScoreTeamA().observe(this, scoreAObserver);
         mViewModel.getScoreTeamB().observe(this, scoreBObserver);
-        // TODO 10. We don't need to explicitly call displayForTeamX every time the user taps on the corresponding
-        //  button to change the score
-
-        // TODO 11. We move the data-related operations to the ViewModel
-
     }
-
-    // TODO 06. Using the ViewModel in the UIController.
 
     /**
      * Increase the score for Team A by 1 point.
