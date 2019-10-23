@@ -17,9 +17,7 @@ package com.example.android.courtcounter;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.view.View;
 import android.widget.TextView;
@@ -38,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // ViewModelProvider provides ViewModels for a scope
         mViewModel = new ViewModelProvider(this).get(ScoreViewModel.class);
+        // TODO 03. Start observing LiveData object.
+        // TODO 03.01. Create the observer which updates the UI
+        // TODO 03.02. Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
+        // TODO 04. We don't need to explicitly call displayForTeamX every time the user taps on the corresponding
+        //  button to change the score
+        // TODO 05. We move the data-related operations to the ViewModel
     }
 
     /**
