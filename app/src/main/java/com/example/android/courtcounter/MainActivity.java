@@ -51,48 +51,42 @@ public class MainActivity extends AppCompatActivity {
      * Increase the score for Team A by 1 point.
      */
     public void addOneForTeamA(View v) {
-        mViewModel.setScoreTeamA(mViewModel.getScoreTeamA() + 1);
-        displayForTeamA(mViewModel.getScoreTeamA());
+        displayForTeamA(mViewModel.increaseScoreTeamA(1));
     }
 
     /**
      * Increase the score for Team A by 2 points.
      */
     public void addTwoForTeamA(View v) {
-        mViewModel.setScoreTeamA(mViewModel.getScoreTeamA() + 2);
-        displayForTeamA(mViewModel.getScoreTeamA());
+        displayForTeamA(mViewModel.increaseScoreTeamA(2));
     }
 
     /**
      * Increase the score for Team A by 3 points.
      */
     public void addThreeForTeamA(View v) {
-        mViewModel.setScoreTeamA(mViewModel.getScoreTeamA() + 3);
-        displayForTeamA(mViewModel.getScoreTeamA());
+        displayForTeamA(mViewModel.increaseScoreTeamA(3));
     }
 
     /**
      * Increase the score for Team B by 1 point.
      */
     public void addOneForTeamB(View v) {
-        mViewModel.setScoreTeamB(mViewModel.getScoreTeamB() + 1);
-        displayForTeamB(mViewModel.getScoreTeamB());
+        displayForTeamA(mViewModel.increaseScoreTeamB(1));
     }
 
     /**
      * Increase the score for Team B by 2 points.
      */
     public void addTwoForTeamB(View v) {
-        mViewModel.setScoreTeamB(mViewModel.getScoreTeamB() + 2);
-        displayForTeamB(mViewModel.getScoreTeamB());
+        displayForTeamA(mViewModel.increaseScoreTeamB(2));
     }
 
     /**
      * Increase the score for Team B by 3 points.
      */
     public void addThreeForTeamB(View v) {
-        mViewModel.setScoreTeamB(mViewModel.getScoreTeamB() + 3);
-        displayForTeamB(mViewModel.getScoreTeamB());
+        displayForTeamA(mViewModel.increaseScoreTeamB(3));
     }
 
     /**
