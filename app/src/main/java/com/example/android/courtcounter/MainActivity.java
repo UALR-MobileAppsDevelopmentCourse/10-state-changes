@@ -17,15 +17,22 @@ package com.example.android.courtcounter;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 /**
  * This activity keeps track of the basketball score for 2 teams.
  */
+
+// TODO 02. Create a ViewModel class to hold all the data associated with the screen: ScoreViewModel
+
 public class MainActivity extends AppCompatActivity {
+
+    // TODO 03. We move the data-related attributes to the ViewModel class: ScoreViewModel
+
+    // TODO 04. We create the getter and setter methods for the ScoreViewModel class
+
+    // TODO 05. Create a member variable for the ViewModel in the UI Controller
 
     // Tracks the score for Team A
     int scoreTeamA = 0;
@@ -37,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // TODO 06. Initialize ViewModel using ViewModelProvider.
     }
+
+    // TODO 07. Using the ViewModel in the UIController.
 
     /**
      * Increase the score for Team A by 1 point.
