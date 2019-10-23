@@ -28,4 +28,14 @@ public class ScoreViewModel extends ViewModel {
     public void setScoreTeamB(int scoreTeamB) {
         this.scoreTeamB = scoreTeamB;
     }
+
+    public int increaseScoreTeamA(int score) {
+        this.scoreTeamA += score;
+        return scoreTeamA;
+    }
+
+    public int increaseScoreTeamB(int score) {
+        this.scoreTeamB += score;
+        return scoreTeamB;
+    }
 }
