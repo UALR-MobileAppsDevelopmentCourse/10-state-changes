@@ -28,13 +28,7 @@ import android.widget.TextView;
  * This activity keeps track of the basketball score for 2 teams.
  */
 
-// TODO 01. Create a ViewModel class to hold all the data associated with the screen
-
 public class MainActivity extends AppCompatActivity {
-
-    // TODO 02. We move the data-related attributes to the ViewModel class
-
-    // TODO 04. Create a member variable for the ViewModel in the UI Controller
 
     private ScoreViewModel mViewModel;
 
@@ -42,12 +36,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // TODO 05. Initialize ViewModel using ViewModelProvider.
         // ViewModelProvider provides ViewModels for a scope
         mViewModel = new ViewModelProvider(this).get(ScoreViewModel.class);
     }
-
-    // TODO 06. Using the ViewModel in the UIController.
 
     /**
      * Increase the score for Team A by 1 point.
