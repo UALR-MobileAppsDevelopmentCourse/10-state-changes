@@ -13,7 +13,7 @@ public class ScoreViewModel extends ViewModel {
     // Tracks the score for Team B
     private int scoreTeamB = 0;
 
-    // TODO 03. We create the getter and setter methods
+    // TODO 04. We create the getter and setter methods
 
     public int getScoreTeamA() {
         return scoreTeamA;
