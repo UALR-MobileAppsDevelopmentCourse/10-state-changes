@@ -8,13 +8,8 @@ import androidx.lifecycle.ViewModel;
  */
 public class ScoreViewModel extends ViewModel {
 
-    // TODO 07. Replace the int members with MutableLiveData objects
     private MutableLiveData<Integer> scoreTeamA = new MutableLiveData<>(new Integer(0));
     private MutableLiveData<Integer> scoreTeamB = new MutableLiveData<>(new Integer(0));
-
-    // TODO 03. We create the getter and setter methods
-
-    // TODO 08. We create the getter and setter methods of the MutableLiveData version
 
     public MutableLiveData<Integer> getScoreTeamA() {
         return scoreTeamA;
