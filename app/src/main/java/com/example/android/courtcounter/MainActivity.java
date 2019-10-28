@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // TODO 01. We need to setup a ViewModel to receive a SavedStateHandle you need to
+        // TODO 02. We need to setup a ViewModel to receive a SavedStateHandle you need to
         //  create them using a SavedStateViewModelFactory
         //
         SavedStateViewModelFactory vmFactory = new SavedStateViewModelFactory(this.getApplication(), this);

@@ -1,7 +1,6 @@
 package com.example.android.courtcounter;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 
@@ -13,8 +12,10 @@ import androidx.lifecycle.ViewModel;
 
 public class ScoreViewModel extends ViewModel {
 
+    // TODO 04. We need to define key values to identify data to be stored in saved state
     private static final String SCORE_A_KEY = "scoreA";
     private static final String SCORE_B_KEY = "scoreB";
+    // TODO 03. We define a SavedStateHangle member
     private SavedStateHandle mState;
 
     // TODO 02. We have to define a constructor that receives a SavesStateHandle
@@ -22,9 +23,8 @@ public class ScoreViewModel extends ViewModel {
         this.mState = savedStateHandle;
     }
 
-    // TODO 03. We create setter and getter methods.
-    // TODO 04. We use module's LiveData support. Since we are using LiveData from mState, we don't
-    //  need to use MutableLiveData anymore.
+    // TODO 05. We have to modify setter and getter methods.
+    // TODO 06. We try to recover data stored in the saved state. Is there's no value we initialize it.
 
     public LiveData<Integer> getScoreTeamA() {
 
@@ -34,6 +34,8 @@ public class ScoreViewModel extends ViewModel {
         }
         return scoreTeamA;
     }
+
+    // TODO 07. We save the value in the saved state
 
     public void setScoreTeamA(int scoreTeamA) {
         this.mState.set(SCORE_A_KEY, scoreTeamA);
