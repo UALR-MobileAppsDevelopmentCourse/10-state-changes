@@ -11,6 +11,9 @@ public class ScoreViewModel extends ViewModel {
     private MutableLiveData<Integer> scoreTeamA = new MutableLiveData<>(new Integer(0));
     private MutableLiveData<Integer> scoreTeamB = new MutableLiveData<>(new Integer(0));
 
+    // TODO 02. We have to define a constructor that receives a SavesStateHandle
+
+
     public MutableLiveData<Integer> getScoreTeamA() {
         return scoreTeamA;
     }
