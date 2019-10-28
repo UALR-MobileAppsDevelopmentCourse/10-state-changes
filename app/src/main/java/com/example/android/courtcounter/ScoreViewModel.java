@@ -18,13 +18,13 @@ public class ScoreViewModel extends ViewModel {
     // TODO 03. We define a SavedStateHangle member
     private SavedStateHandle mState;
 
-    // TODO 02. We have to define a constructor that receives a SavesStateHandle
+    // TODO 05. We have to define a constructor that receives a SavesStateHandle
     public ScoreViewModel(SavedStateHandle savedStateHandle) {
         this.mState = savedStateHandle;
     }
 
-    // TODO 05. We have to modify setter and getter methods.
-    // TODO 06. We try to recover data stored in the saved state. Is there's no value we initialize it.
+    // TODO 06. We have to modify setter and getter methods.
+    // TODO 07. We try to recover data stored in the saved state. Is there's no value we initialize it.
 
     public LiveData<Integer> getScoreTeamA() {
 
@@ -35,7 +35,7 @@ public class ScoreViewModel extends ViewModel {
         return scoreTeamA;
     }
 
-    // TODO 07. We save the value in the saved state
+    // TODO 08. We save the value in the saved state
 
     public void setScoreTeamA(int scoreTeamA) {
         this.mState.set(SCORE_A_KEY, scoreTeamA);
