@@ -18,10 +18,8 @@ package com.example.android.courtcounter;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.SavedStateViewModelFactory;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.SavedStateViewModelFactory;
 
 import android.view.View;
 import android.widget.TextView;
@@ -40,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // TODO 02. We need to setup a ViewModel to receive a SavedStateHandle you need to
         //  create them using a SavedStateViewModelFactory
-        //
+
+        // TODO 02.01 We create the SavedStateHandle object using a Factory object that extends AbstractSavedStateVMFactory like SavedStateViewModelFactory
         SavedStateViewModelFactory vmFactory = new SavedStateViewModelFactory(this.getApplication(), this);
+        // TODO 02.02 We create the new ViewModel object by using the ViewModelProvider.
         mViewModel = new ViewModelProvider(this, vmFactory).get(ScoreViewModel.class);
 
         final Observer<Integer> scoreAObserver = new Observer<Integer>() {

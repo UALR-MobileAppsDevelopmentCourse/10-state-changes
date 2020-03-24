@@ -12,13 +12,14 @@ import androidx.lifecycle.ViewModel;
 
 public class ScoreViewModel extends ViewModel {
 
-    // TODO 04. We need to define key values to identify data to be stored in saved state
+    // TODO 05. We need to define key values to identify data to be stored in saved state
     private static final String SCORE_A_KEY = "scoreA";
     private static final String SCORE_B_KEY = "scoreB";
-    // TODO 03. We define a SavedStateHangle member
+
+    // TODO 04. We define a SavedStateHangle member
     private SavedStateHandle mState;
 
-    // TODO 05. We have to define a constructor that receives a SavesStateHandle
+    // TODO 03. We configure the defined ViewModel to receive a SavedStateHandle object through the constructor
     public ScoreViewModel(SavedStateHandle savedStateHandle) {
         this.mState = savedStateHandle;
     }
