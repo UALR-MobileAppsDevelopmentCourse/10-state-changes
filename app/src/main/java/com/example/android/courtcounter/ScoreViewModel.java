@@ -5,8 +5,11 @@ import androidx.lifecycle.ViewModel;
 /**
  * Created by irconde on 2019-10-08.
  */
+
+// TODO 02. Create a ViewModel class to hold all the data associated with the screen: ScoreViewModel
 public class ScoreViewModel extends ViewModel {
 
+    // TODO 03. We move the data-related attributes to the ViewModel class
     // Tracks the score for Team A
     private int scoreTeamA = 0;
 
