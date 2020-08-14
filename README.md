@@ -1,4 +1,4 @@
-# Design patterns in Android
+# Saved state
 Android project used as introduction to different Android mechanisms necessary to save the app state, as part of the elective course &quot;CPSC-3367 Mobile Apps Development&quot; from UA Little Rock
 
 ## Description
